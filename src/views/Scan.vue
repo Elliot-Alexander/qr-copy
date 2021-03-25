@@ -99,6 +99,7 @@
 
 <script>
 import {QrcodeStream} from 'vue-qrcode-reader'
+import axios from "axios";
 
 export default {
     name: "Scan",
@@ -111,10 +112,26 @@ export default {
             qrLoader: false,
         }
     },
+    sockets: {
+        // clientJoined() {
+        //     console.log("joined room")
+        // }
+    },
     methods: {
         onDecode: function(result) {
             this.qrLoader = false
             this.result = result
+            axios.get(`http://localhost:3000/validate/session/${result}`)
+                .then(res => {
+                    if(res === 200) {
+                        this.$router.push(`/session/${result}`)
+                    } else {
+                        console.log(res)
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             console.log(result)
         },
         async onInit (promise) {

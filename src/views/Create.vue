@@ -27,11 +27,13 @@ export default {
             console.log(details)
             this.value.sessionId = details.sessionId
             this.value.token = details.token
+        },
+        clientJoined() {
+            this.$router.push(`/session/${this.value.sessionId}`)
         }
     },
     beforeCreate() {
         this.$socket.client.emit('getSetup')
-
     }
 }
 
