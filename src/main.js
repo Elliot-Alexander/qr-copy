@@ -6,7 +6,7 @@ import './assets/tailwind.css'
 import VueSocketIOExt from 'vue-socket.io-extended';
 import { io } from 'socket.io-client';
 
-const socket = io('104.154.34.14');
+const socket = io('http://104.154.34.14');
 
 Vue.config.productionTip = false
 
