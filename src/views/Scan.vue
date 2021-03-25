@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col space-y-2 w-full h-screen justify-center">
-        <h1 class="text-3xl font-medium text-center text-white">Scan</h1>
-        <div class="flex flex-col w-5/6 mx-auto bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+        <h1 class="text-4xl font-title text-center text-white">Scan</h1>
+        <div class="flex flex-col w-11/12 max-w-lg mx-auto bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-lg font-body">
             <div class="flex flex-col">
                 <div class="w-full h-3/4 rounded-t-lg overflow-hidden">
                     <qrcode-stream
