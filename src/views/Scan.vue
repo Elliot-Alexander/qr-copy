@@ -120,8 +120,8 @@ export default {
     methods: {
         onDecode: function(result) {
             this.qrLoader = false
-            this.result = result
-            axios.get(`https://api.connectr.xyz/validate/session/${result}`)
+            this.result = JSON.parse(result)
+            axios.get(`https://api.connectr.xyz/validate/session/${this.result.sessionId}`)
                 .then(res => {
                     if(res === 200) {
                         this.$router.push(`/session/${result}`)
