@@ -125,7 +125,7 @@ export default {
             axios.get(`https://api.connectr.xyz/validate/session/${this.result.sessionId}`)
                 .then(res => {
                     if(res.status === 200) {
-                        this.$router.push(`/session/${result}`)
+                        this.$router.push(`/session/${this.result.sessionId}`)
                     } else {
                         this.error = "ERROR: Invalid QR code"
                         console.log(res)
