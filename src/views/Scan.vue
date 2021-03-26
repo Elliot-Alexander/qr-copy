@@ -121,6 +121,7 @@ export default {
         onDecode: function(result) {
             this.qrLoader = false
             this.result = JSON.parse(result)
+            console.log(this.result)
             axios.get(`https://api.connectr.xyz/validate/session/${this.result.sessionId}`)
                 .then(res => {
                     if(res.status === 200) {
